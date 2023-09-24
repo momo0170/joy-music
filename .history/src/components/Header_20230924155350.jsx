@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Header() {
   return (
     <header className="flex justify-between p-2 border-b h-13 items-center">
-      <Link to="/" className="flex items-center">
+      <Link>
         <GiMusicSpell
           size="40"
           color="#7c3aed"
