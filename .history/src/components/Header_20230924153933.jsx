@@ -9,9 +9,7 @@ export default function Header() {
       <div>Joy Music</div>
       <form>
         <input type="text" />
-        <button>
-          <AiOutlineSearch />
-        </button>
+        <button>검색</button>
       </form>
       <div>
         <button>로그인</button>

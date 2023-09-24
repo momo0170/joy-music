@@ -5,13 +5,10 @@ import { AiOutlineSearch } from 'react-icons/ai';
 export default function Header() {
   return (
     <header>
-      <GiMusicSpell />
       <div>Joy Music</div>
       <form>
         <input type="text" />
-        <button>
-          <AiOutlineSearch />
-        </button>
+        <button>검색</button>
       </form>
       <div>
         <button>로그인</button>
