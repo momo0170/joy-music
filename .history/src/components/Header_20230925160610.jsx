@@ -8,11 +8,7 @@ export default function Header() {
   const onChange = (e) => {
     setKeyword(e.target.value);
   };
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(keyword);
-  };
-
+  // console.log(keyword);
   return (
     <header className="flex justify-between p-2 border-b h-13 items-center">
       {/*  로고 */}
@@ -26,7 +22,7 @@ export default function Header() {
       </Link>
 
       {/* 검색 */}
-      <form className="flex transform translate-x-8" onSubmit={onSubmit}>
+      <form className="flex transform translate-x-8">
         <input
           type="text"
           placeholder="검색"
