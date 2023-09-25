@@ -5,7 +5,6 @@ import { IoIosListBox, IoIosList } from 'react-icons/io';
 
 const SIZE = '25';
 const COLOR = '#7C3AED';
-
 export default function MenuButton({ text, path }) {
   return (
     <div>
