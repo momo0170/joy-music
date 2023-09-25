@@ -6,11 +6,5 @@ export default function MenuBar() {
     ['/', '홈'],
     ['/playlist', '플레이리스트'],
   ];
-  return (
-    <aside>
-      {list.map((item, idx) => (
-        <MenuButton key={idx} text={item[1]} path={item[0]} />
-      ))}
-    </aside>
-  );
+  return <aside>{list.map((item, idx) => <MenuButton key={})}</aside>;
 }

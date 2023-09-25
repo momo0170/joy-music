@@ -1,7 +1,6 @@
 import React from 'react';
-import MenuButton from './Menubutton';
 
-export default function MenuBar() {
+export default function Menubar() {
   const list = [
     ['/', '홈'],
     ['/playlist', '플레이리스트'],
@@ -9,7 +8,7 @@ export default function MenuBar() {
   return (
     <aside>
       {list.map((item, idx) => (
-        <MenuButton key={idx} text={item[1]} path={item[0]} />
+        // <Menubar key={idx} text={item[1]} path={item[0]} />
       ))}
     </aside>
   );
