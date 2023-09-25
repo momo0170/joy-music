@@ -8,7 +8,7 @@ export default function Menubar() {
   return (
     <aside>
       {list.map((item, idx) => (
-        <Menubar key={idx} text={item[1]} path={item[0]} />
+        <Menubar />
       ))}
     </aside>
   );
