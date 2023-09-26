@@ -13,7 +13,7 @@ export default function Home() {
         headers: {
           Authorization: 'Bearer ' + access_token,
         },
-      }).then((res) => console.log(res.data.albums.items));
+      }).then((res) => console.log(res));
   });
   return <div>홈입니다.</div>;
 }

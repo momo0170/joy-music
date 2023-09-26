@@ -9,11 +9,11 @@ export default function Home() {
     access_token &&
       axios({
         method: 'get',
-        url: `https://api.spotify.com/v1/browse/new-releases?limit=10`,
+        url: `https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl`,
         headers: {
           Authorization: 'Bearer ' + access_token,
         },
-      }).then((res) => console.log(res.data.albums.items));
+      }).then((res) => console.log(res));
   });
   return <div>홈입니다.</div>;
 }
