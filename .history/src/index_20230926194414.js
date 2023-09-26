@@ -5,7 +5,6 @@ import App from './App';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './router/Home';
 import Playlist from './router/Playlist';
-import TokenContextProvider from './context/GetTokenContext';
 
 const router = createBrowserRouter([
   {
@@ -26,9 +25,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <TokenContextProvider>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
-  </TokenContextProvider>
+  <RouterProvider router={router}>
+    <App />
+  </RouterProvider>
 );

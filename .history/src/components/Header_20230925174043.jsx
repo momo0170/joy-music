@@ -1,0 +1,73 @@
+import React, { useState, useEffect } from 'react';
+import { GiMusicSpell } from 'react-icons/gi';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+export default function Header() {
+  const [keyword, setKeyword] = useState('');
+  const onChange = (e) => {
+    setKeyword(e.target.value);
+  };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(keyword);
+  };
+
+  const [token, setToken] = useState('');
+  console.log(token);
+  useEffect(() => {
+    axios({
+      method: 'POST',
+      url: 'https://accounts.spotify.com/api/token',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      data: {
+        grant_type: 'client_credentials',
+        client_id: process.env.REACT_APP_CLIENT_ID,
+        client_secret: process.env.REACT_APP_CLIENT_SECRET,
+      },
+    }) //
+      .then((res) => setToken(res.data.access_token))
+      .catch((result) => console.log(result));
+  }, []);
+
+  return (
+    <header className="flex justify-between p-2 border-b h-13 items-center">
+      {/*  로고 */}
+      <Link to="/" className="flex items-center">
+        <GiMusicSpell
+          size="40"
+          color="#7c3aed"
+          className="hover:animate-spin"
+        />
+        <div className="text-violet-600 text-2xl ml-2 font-bold">Joy Music</div>
+      </Link>
+
+      {/* 검색 */}
+      <form className="flex transform translate-x-8" onSubmit={onSubmit}>
+        <input
+          type="text"
+          placeholder="검색"
+          value={keyword}
+          onChange={onChange}
+          className="rounded-l-md border border-stone-400 p-1 px-2 focus:shadow-inner2 outline-none focus:border-violet-600 placeholder:text-sm hover:shadow-hoverInput hover:border-hoverInput w-80"
+        />
+        <button className="bg-gray-200 p-1 rounded-r-md box-border hover:bg-gray-300">
+          <AiOutlineSearch />
+        </button>
+      </form>
+
+      {/* 버튼 */}
+      <div className="flex">
+        <button className="bg-gray-200 mx-2 px-4 py-1.5 rounded text-sm font-semibold hover:bg-gray-300">
+          로그인
+        </button>
+        <button className="bg-violet-600 text-white mx-2 px-4 py-1.5 rounded text-sm font-semibold hover:bg-violet-700">
+          회원가입
+        </button>
+      </div>
+    </header>
+  );
+}
