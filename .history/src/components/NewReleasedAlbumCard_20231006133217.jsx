@@ -8,7 +8,11 @@ export default function NewReleasedAlbumCard({ images, artists, name }) {
       <div>
         <div>아티스트</div>
         {artists &&
-          artists.map((item, idx) => <div key={idx}>{item.name}</div>)}
+          artists.map((item) => (
+            <>
+              <div>{item.name}</div>
+            </>
+          ))}
       </div>
     </>
   );
