@@ -21,13 +21,9 @@ export default function Home() {
 
   return (
     <ul>
-      {newReleasedAlbums.map((item) => (
-        <li key={item.id}>
-          <NewReleasedAlbumCard
-            images={item.images}
-            artists={item.artists}
-            name={item.name}
-          />
+      {newReleasedAlbums.map((item, idx) => (
+        <li>
+          <NewReleasedAlbumCard />
         </li>
       ))}
     </ul>

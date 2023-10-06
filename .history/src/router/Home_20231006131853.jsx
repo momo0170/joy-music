@@ -23,11 +23,7 @@ export default function Home() {
     <ul>
       {newReleasedAlbums.map((item) => (
         <li key={item.id}>
-          <NewReleasedAlbumCard
-            images={item.images}
-            artists={item.artists}
-            name={item.name}
-          />
+          <NewReleasedAlbumCard />
         </li>
       ))}
     </ul>

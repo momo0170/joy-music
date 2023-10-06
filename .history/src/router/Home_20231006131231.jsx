@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GetTokenContext } from '../context/GetTokenContext';
 import axios from 'axios';
-import NewReleasedAlbumCard from '../components/NewReleasedAlbumCard';
 
 export default function Home() {
   const access_token = useContext(GetTokenContext);
-  const [newReleasedAlbums, setNewReleasedAlbums] = useState([]);
+  const [newReleasedAlbums, setAlbums] = useState([]);
   console.log(access_token);
   console.log(newReleasedAlbums);
   useEffect(() => {
@@ -16,20 +15,14 @@ export default function Home() {
         headers: {
           Authorization: 'Bearer ' + access_token,
         },
-      }).then((res) => setNewReleasedAlbums(res.data.albums.items));
+      }).then((res) => setAlbums(res.data.albums.items));
   }, [access_token]);
 
   return (
     <ul>
-      {newReleasedAlbums.map((item) => (
-        <li key={item.id}>
-          <NewReleasedAlbumCard
-            images={item.images}
-            artists={item.artists}
-            name={item.name}
-          />
-        </li>
-      ))}
+      <li>
+        {newReleasedAlbums.map((item, idx) => )}
+      </li>
     </ul>
   );
 }
