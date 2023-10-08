@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function NewReleasedAlbumCard({ images, artists, name }) {
   return (
-    <div className="w-52 m-4 p-3 bg-neutral-100 rounded-lg">
-      <img src={images[1].url} alt="album" className="rounded-lg" />
+    <div className="w-52 m-4 p-3 bg-neutral-100">
+      <img src={images[1].url} alt="album" />
       <div className="my-2">
-        <div className="font-medium text-ellipsis overflow-hidden whitespace-nowrap">
+        <div className="font-medium  overflow-hidden whitespace-nowrap">
           {name}
         </div>
         <div>

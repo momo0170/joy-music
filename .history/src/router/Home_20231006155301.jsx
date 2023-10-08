@@ -24,16 +24,15 @@ export default function Home() {
   }, [access_token]);
 
   return (
-    <div className="flex justify-center w-full">
-      <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-        {newReleasedAlbums.map((item) => (
-          <NewReleasedAlbumCard
-            images={item.images}
-            artists={item.artists}
-            name={item.name}
-          />
-        ))}
-      </ScrollMenu>
-    </div>
+    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+      {newReleasedAlbums.map((item) => (
+        <NewReleasedAlbumCard
+          id={item.id}
+          images={item.images}
+          artists={item.artists}
+          name={item.name}
+        />
+      ))}
+    </ScrollMenu>
   );
 }

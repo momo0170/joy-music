@@ -1,0 +1,37 @@
+/* .react-horizontal-scrolling-menu--scroll-container.rtl {
+  direction: rtl;
+} */
+.react-horizontal-scrolling-menu--wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 80vw;
+  height: 300px;
+}
+/* header, footer는 사용하지 않으므로 보이지 않도록 함 */
+.react-horizontal-scrolling-menu--footer,
+.react-horizontal-scrolling-menu--header {
+  display: none;
+}
+.react-horizontal-scrolling-menu--inner-wrapper {
+  display: flex;
+  height: 100;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  display: flex;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+}
+/* 왼쪽, 오른쪽 버튼 */
+.react-horizontal-scrolling-menu--arrow-left,
+.react-horizontal-scrolling-menu--arrow-right {
+  display: flex;
+  margin: 0px 10px;
+  background-color: lightcoral;
+}
+.react-horizontal-scrolling-menu--item {
+  display: flex;
+  justify-content: center;
+}

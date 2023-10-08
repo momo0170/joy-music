@@ -16,7 +16,7 @@ export default function Home() {
     access_token &&
       axios({
         method: 'get',
-        url: `https://api.spotify.com/v1/browse/new-releases?limit=30`,
+        url: `https://api.spotify.com/v1/browse/new-releases?limit=10`,
         headers: {
           Authorization: 'Bearer ' + access_token,
         },
@@ -24,16 +24,17 @@ export default function Home() {
   }, [access_token]);
 
   return (
-    <div className="flex justify-center w-full">
+    <ul>
       <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
         {newReleasedAlbums.map((item) => (
           <NewReleasedAlbumCard
+            id={item.id}
             images={item.images}
             artists={item.artists}
             name={item.name}
           />
         ))}
       </ScrollMenu>
-    </div>
+    </ul>
   );
 }

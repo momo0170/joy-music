@@ -24,7 +24,7 @@ export default function Home() {
   }, [access_token]);
 
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center w-full h-auto">
       <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
         {newReleasedAlbums.map((item) => (
           <NewReleasedAlbumCard

@@ -1,0 +1,11 @@
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  overflow: hidden;
+  display: none;
+}
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.react-horizontal-scrolling-menu--wrapper::-webkit-scrollbar {
+  display: none;
+}
